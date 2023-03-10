@@ -14,6 +14,6 @@ sampling_zone_fac <- factor(analyte_health_flag_E$SamplingZone, levels = samplin
 
 # Create a plot
 ggplot(data = analyte_health_flag_E) + 
-  geom_bar(mapping = aes(y = analyte_name, fill = factor(as.character(SamplingZone), levels = sampling_zone_levels)), position = position_stack(reverse = TRUE), color = "black") + 
+  geom_bar(mapping = aes(y = analyte_name, fill = factor(SamplingZone, levels = sampling_zone_levels)), position = position_stack(reverse = TRUE), color = "black") + 
   geom_text(mapping = aes(y = analyte_name, x = after_stat(count), label = SamplingZone, group = SamplingZone), stat = "count", hjust = 0.5, position = position_stack(vjust = 0.5, reverse = TRUE)) +
   labs(y = "Analyte Name", x = "HealthFlag-E Count", title = "Analyte Health Flag 'HealthFlag-E' Count per Analyte by Sampling Zone", fill = "Sampling Zone\n(Labeled)")
