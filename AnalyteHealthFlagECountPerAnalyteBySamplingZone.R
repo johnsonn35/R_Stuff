@@ -1,9 +1,9 @@
 library(tidyverse)
 
-# Assign sampling data to flint_samples
+# Assign sampling data to samples
 samples <- read_csv("C:\\Users\\JohnsonN35\\Downloads\\FIIP_CombinedLabsWorkbookTrimmed_to221110.csv", skip = 5)
 
-# Filter flint_samples to only records that have HealthFlag-E in AnalyteHealthFlag
+# Filter samples to only records that have HealthFlag-E in AnalyteHealthFlag
 analyte_health_flag_E <- filter(samples, AnalyteHealthFlag == 'HealthFlag-E')
 
 # Create a list of the valid sampling zone levels (otherwise zone 10 will follow 1 on chart)
